@@ -89,7 +89,7 @@ def predict(data_in: InputData):
     imp = permutation_importance_individual(x)
 
     # Real bootstrap mediation (fast version — 200 resamples for API speed)
-    indirect_mean, ci_lo, ci_hi = bootstrap_mediation(x, n_boot=200)
+    indirect_mean, ci_lo, ci_hi = bootstrap_mediation(x, n_boot=50)
     direct_pct = 1.0 - indirect_mean
 
     # Pathway from real feature importances
